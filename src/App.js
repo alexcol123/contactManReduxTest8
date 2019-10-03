@@ -4,10 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import Header from './components/layout/Header';
+
+import { Contacts } from './components/contacts/Contacts';
+
 import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
-
-import Header from './components/layout/Header';
 
 class App extends Component {
   render() {
@@ -17,6 +19,7 @@ class App extends Component {
           <Header />
           <div className="container">
             <Switch>
+              <Route exact path="/" component={Contacts} />
               <Route exact path="/about" component={About} />
               <Route exact path="/notFound" component={NotFound} />
             </Switch>
