@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addContact } from '../../actions/contactActions';
+import uuid from 'uuid';
 
 export class AddContact extends Component {
   state = {
@@ -34,6 +38,7 @@ export class AddContact extends Component {
     };
 
     // Submit Contact
+    this.props.addContact(newContact);
 
     // Clear State
 
@@ -135,4 +140,7 @@ export class AddContact extends Component {
   }
 }
 
-export default AddContact;
+export default connect(
+  null,
+  { addContact }
+)(AddContact);
