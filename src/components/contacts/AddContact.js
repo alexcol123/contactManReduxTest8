@@ -33,7 +33,17 @@ export class AddContact extends Component {
       phone
     };
 
-    console.log(newContact);
+    // Submit Contact
+
+    // Clear State
+
+    this.setState({
+      name: '',
+      email: '',
+      phone: '',
+      errors: {}
+    });
+    this.props.history.push('/');
   };
 
   onChange = e =>
@@ -58,9 +68,6 @@ export class AddContact extends Component {
                 placeholder="Enter Name"
                 value={name}
                 onChange={this.onChange}
-                // className={classnames(' form-control form-control-lg', {
-                //   'is-invalid': this.state.errors.name
-                // })}
                 className={
                   this.state.errors.name
                     ? 'form-control form-control-lg is-invalid'
