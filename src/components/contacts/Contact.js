@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { deleteContact } from '../../actions/contactActions';
 
 export class Contact extends Component {
   state = { showContactInfo: false };
 
   onDeleteClick = id => {
-    console.log('Deleting ' + id);
+    this.props.deleteContact(id);
   };
   render() {
     const { id, name, email, phone } = this.props.contact;
@@ -56,4 +59,7 @@ export class Contact extends Component {
   }
 }
 
-export default Contact;
+export default connect(
+  null,
+  { deleteContact }
+)(Contact);
