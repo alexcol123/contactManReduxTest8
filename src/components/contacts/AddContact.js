@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addContact } from '../../actions/contactActions';
-import uuid from 'uuid';
+
 
 export class AddContact extends Component {
   state = {
